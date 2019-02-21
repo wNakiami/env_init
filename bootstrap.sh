@@ -21,6 +21,8 @@ Start () {
     fi
 }
 
+echo "$-"
+
 if [[ $# -gt 1 || $# -eq 0 ]]
 then
     Usage
@@ -43,10 +45,13 @@ then
     mkdir $LOCAL
 fi
 
-if [ ! -d $LOCAL/.env_init ]
+ENV=$LOCAL/.env_init
+if [ ! -d $ENV ]
 then
     echo "clone env_init..."
-    git clone https://github.com/wNakiami/env_init.git $LOCAL/.env_init
+    git clone https://github.com/wNakiami/env_init.git $ENV
 fi
+
+echo "source $ENV" >> $HOME/.zshrc
 
 echo 'init over'
