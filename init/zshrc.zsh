@@ -1,9 +1,3 @@
-# Enable 256 color to make auto-suggestions look nice
-export TERM="xterm-256color"
-
-export PATH=$PATH:$HOME/.local/bin:$HOME/bin
-export EDITOR=/usr/bin/vim
-
 # exit for non-interactive shell
 [[ $- != *i* ]] && return
 
