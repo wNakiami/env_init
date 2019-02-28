@@ -26,4 +26,9 @@ then
     echo "umask 022" >> $HOME/.zshrc
 fi
 
+if [ -f "$HOME/.vimrc" ]
+then
+    echo "source $HOME/.vim/init.vim" >> $HOME/.vimrc
+fi
+
 echo 'init over'

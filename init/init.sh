@@ -23,7 +23,8 @@ then
     fi
 elif [ -n "$BASH_VERSION" ]
 then
-    if shopt -q login_shell
+    if shopt -q login_shell && [ -f "$HOME/.local/etc/bashrc.bash" ]
     then
+        source $HOME/.local/etc/bashrc.bash
     fi
 fi

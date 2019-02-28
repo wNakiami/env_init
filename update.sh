@@ -9,3 +9,9 @@ SCRIPTPATH=$(dirname  "$SCRIPT")
 
 cp $SCRIPTPATH/init/*.sh "$HOME/.local/etc/"
 cp $SCRIPTPATH/init/*.zsh "$HOME/.local/etc/"
+
+
+
+[ ! -d "$HOME/.vim" ] && mkdir -p $HOME/.vim 2> /dev/null
+
+cp $SCRIPTPATH/vim/*.vim $HOME/.vim

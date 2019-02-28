@@ -1,0 +1,222 @@
+set nocompatible
+
+" 在文件变化时自动读取新文件
+set autoread
+
+let mapleader = ","
+let g:mapleader = ","
+
+nmap <leader>w :w!<cr>
+
+set mouse=a
+
+set updatetime=200
+
+set number
+
+set so=7
+
+set background=dark
+set t_Co=256
+syntax on
+colorscheme monokai
+
+set encoding=utf-8
+
+" 以sudo权限保存文件
+command W w !sudo tee % > /dev/null
+
+" 打开命令可补全内容预览
+set wildmenu
+
+" 忽略文件设置
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
+
+" 打开状态栏
+set ruler
+
+set cmdheight=2
+
+" 隐藏被丢弃的buffer
+set hid
+
+" set not show mode at bottom
+set noshowmode
+
+set ignorecase
+
+set smartcase
+set incsearch
+
+set hlsearch
+
+set noswapfile
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" Don't redraw while executing macros (good performance config)
+"set lazyredraw
+
+" 用空格代替tabs
+set expandtab
+set smarttab
+set shiftwidth=4
+set tabstop=4
+
+map <silent> <leader><cr> :noh<cr>
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+map <leader>bd :bd<cr>
+
+map <C-n> :bprevious<cr>
+map <C-m> :bnext<cr>
+
+" 显示状态栏
+set laststatus=2
+
+" When you press <leader>r you can search and replace the selected text
+"vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+"vnoremap <silent> * /<c-r><c-w><cr><esc>N
+func Cmdline(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunc
+func VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call Cmdline("Ag \"" . l:pattern . "\" " )
+    elseif a:direction == 'replace'
+        call Cmdline("%s", '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunc
+
+map <F4> ms:call TitleDet()<cr>
+func TitleDet()
+    if &filetype == 'lua'
+        call AddTitle()
+    endif
+endfunc
+func AddTitle()
+    call append(0, "--")
+    call append(1, "-- Copyright (C) ".strftime("%Y")." Magicell, All right reserved.")
+    call append(2, "--")
+    call append(3, "-- Author: Nakiami")
+    call append(4, "--")
+    call append(5, "-- Date: ".strftime("%Y.%m.%d"))
+    call append(6, "--")
+    call append(7, "-- Description: ")
+    call append(8, "--")
+endfunc
+
+
+
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+
+" 指定插件目录
+call plug#begin('~/.vim/plugged')
+
+
+Plug 'junegunn/vim-easy-align'
+noremap <leader>a :EasyAlign<cr>
+
+Plug 'mbbill/undotree'
+nnoremap <F5> :UndotreeToggle<cr>
+
+Plug 'mhinz/vim-signify'
+
+Plug 'crusoexia/vim-monokai', {'do': 'cp -rf ./colors ./../../'}
+
+Plug 'vim-airline/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+Plug 'scrooloose/nerdtree'
+let NERDTreeWinPos='right'
+noremap <leader>t :NERDTree<cr>
+noremap <leader>tt :NERDTreeClose<cr>
+
+Plug 'scrooloose/nerdcommenter'
+
+Plug 'easymotion/vim-easymotion'
+
+Plug 'Raimondi/delimitMate'
+
+Plug 'majutsushi/tagbar'
+nnoremap <leader>tb :TagbarToggle<cr>
+
+"Plug 'Yggdroot/LeaderF'
+"nnoremap <leader>f :LeaderfFunction<cr>
+"nnoremap <leader>u :LeaderfFunctionCword<cr>
+"let g:Lf_PreviewResult = {
+            "\ 'File' : 0,
+            "\ 'Buffer' : 0,
+            "\ 'Mru' : 0,
+            "\ 'Tag' : 0,
+            "\ 'BufTag' : 1,
+            "\ 'Function' : 0,
+            "\ 'Line' : 0,
+            "\ 'Colorscheme' : 0
+            "\ }
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-p> :FZF<cr>
+nnoremap <leader>f :BTags<cr>
+nnoremap <leader>u :BTags <c-r><c-w><cr>
+
+Plug 'Valloric/YouCompleteMe'
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_add_preview_to_completeopt = 0
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_confirm_extra_conf = 0
+"let g:ycm_key_list_select_completion = ['<Down>']
+nnoremap <C-g> :YcmCompleter GoTo
+
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+Plug 'dyng/ctrlsf.vim'
+nnoremap <leader>sf :CtrlSF <c-r><c-w><cr>
+nnoremap <leader>st :CtrlSFToggle<cr>
+
+if version >= 800
+    Plug 'ludovicchabant/vim-gutentags'
+    let g:gutentags_project_root = ['.git']
+    let g:gutentags_ctags_tagfile = '.tags'
+    let s:vim_tags = expand('~/.local/tags_cache/tags')
+    let g:gutentags_cache_dir = s:vim_tags
+    if !isdirectory(s:vim_tags)
+        silent! call mkdir(s:vim_tags, 'p')
+    endif
+
+    Plug 'w0rp/ale'
+    let g:ale_lint_on_text_changed = 'normal'
+    let g:ale_lint_on_insert_leave = 1
+    let g:ale_fixers = {'lua': ['luacheck']}
+endif
+
+call plug#end()
