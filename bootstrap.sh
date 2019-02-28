@@ -6,14 +6,13 @@ set -e
 ENV=$HOME/.env_init
 if [ ! -d $ENV ]
 then
-    echo "clone env_init ..."
     git clone https://github.com/wNakiami/env_init.git $ENV
 fi
 
 cd $ENV
 sh update.sh
 
-INIT=$HOME/.local/config/init.sh
+INIT=$HOME/.local/etc/init.sh
 
 echo $INIT >> $HOME/.bashrc
 echo "umask 022" >> $HOME/.bashrc
