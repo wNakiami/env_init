@@ -56,16 +56,16 @@ nnoremap <C-p> :FZF<cr>
 nnoremap <leader>f :BTags<cr>
 nnoremap <leader>u :BTags <c-r><c-w><cr>
 
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
-let g:ycm_add_preview_to_completeopt = 0
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_confirm_extra_conf = 0
+"Plug 'Valloric/YouCompleteMe'
+"let g:ycm_server_python_interpreter = '/usr/bin/python'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+"let g:ycm_add_preview_to_completeopt = 0
+"let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_confirm_extra_conf = 0
 "let g:ycm_key_list_select_completion = ['<Down>']
-nnoremap <C-g> :YcmCompleter GoTo
+"nnoremap <C-g> :YcmCompleter GoTo
 
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 Plug 'dyng/ctrlsf.vim'
 nnoremap <leader>sf :CtrlSF <c-r><c-w><cr>
