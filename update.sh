@@ -12,4 +12,4 @@ cp $SCRIPTPATH/init/*.zsh "$HOME/.local/etc/"
 [ ! -d "$HOME/.vim" ] && mkdir -p $HOME/.vim 2> /dev/null
 cp $SCRIPTPATH/vim/*.vim $HOME/.vim/
 
-cp $SCRIPTPATH/tmux/*.conf $HOME/.tmux.conf
+cp $SCRIPTPATH/tmux/init.conf $HOME/.tmux.conf
