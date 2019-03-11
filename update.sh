@@ -13,3 +13,5 @@ cp $SCRIPTPATH/init/*.zsh "$HOME/.local/etc/"
 cp $SCRIPTPATH/vim/*.vim $HOME/.vim/
 
 cp $SCRIPTPATH/tmux/init.conf $HOME/.tmux.conf
+
+echo "update over"
