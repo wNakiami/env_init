@@ -7,7 +7,11 @@ else
     return
 fi
 
-export EDITOR=/usr/bin/vim
+VIM=`which vim 2>/dev/null`
+if [ -n "$VIM" ]; then
+    export EDITOR="$VIM"
+fi
+unset VIM
 
 case "$TERM" in
     xterm)

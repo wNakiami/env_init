@@ -54,7 +54,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
-#antigen theme robbyrussell
+antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
