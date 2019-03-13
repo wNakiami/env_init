@@ -71,6 +71,10 @@ Plug 'dyng/ctrlsf.vim'
 nnoremap <leader>sf :CtrlSF <c-r><c-w><cr>
 nnoremap <leader>st :CtrlSFToggle<cr>
 
+" these two plugin use for copy text form vim into tmux's clipboard
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
+
 if version >= 800
     Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_project_root = ['.git']
