@@ -11,6 +11,7 @@ fi
 
 cd $ENV
 sh update.sh
+sh git.sh
 
 INIT=$HOME/.local/etc/init.sh
 

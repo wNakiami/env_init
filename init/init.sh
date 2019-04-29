@@ -31,16 +31,10 @@ then
     then
         source $HOME/.local/etc/zshrc.zsh
     fi
-    if [[ -o login ]]
-    then
-    fi
 elif [ -n "$BASH_VERSION" ]
 then
     if [ -f "$HOME/.local/etc/bashrc.bash" ]
     then
         source $HOME/.local/etc/bashrc.bash
-    fi
-    if shopt -q login_shell
-    then
     fi
 fi
