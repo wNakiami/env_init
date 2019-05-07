@@ -15,9 +15,9 @@ if [ ! -f "$ANTIGEN" ]; then
 	# [ ! -f "$HOME/.z" ] && touch "$HOME/.z"
 	URL="http://git.io/antigen"
 	TMPFILE="/tmp/antigen.zsh"
-	if [ -x "$(which curl)" ]; then
+	if [ -x "$(command curl)" ]; then
 		curl -L "$URL" -o "$TMPFILE" 
-	elif [ -x "$(which wget)" ]; then
+	elif [ -x "$(command wget)" ]; then
 		wget "$URL" -O "$TMPFILE" 
 	else
 		echo "ERROR: please install curl or wget before installation !!"

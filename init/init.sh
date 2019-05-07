@@ -7,7 +7,7 @@ else
     return
 fi
 
-VIM=`which vim 2>/dev/null`
+VIM=`command -v vim`
 if [ -n "$VIM" ]; then
     export EDITOR="$VIM"
 fi
