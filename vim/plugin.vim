@@ -78,6 +78,9 @@ nnoremap <leader>st :CtrlSFToggle<cr>
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'roxma/vim-tmux-clipboard'
 
+" syntax highlighting for skynet sproto 
+Plug 'spin6lock/vim_sproto'
+
 if version >= 800
     Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_project_root = ['.git']
