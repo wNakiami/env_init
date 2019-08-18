@@ -98,7 +98,7 @@ if version >= 800
     \   'lua': ['luacheck'],
     \   'python': ['flake8'],
     \}
-    let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128'
+    let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
 endif
 
 call plug#end()
