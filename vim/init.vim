@@ -67,6 +67,7 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
+set autoindent
 
 map <silent> <leader><cr> :noh<cr>
 
