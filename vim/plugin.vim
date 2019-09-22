@@ -65,6 +65,7 @@ nnoremap <leader>u :BTags <c-r><c-w><cr>
 "let g:ycm_add_preview_to_completeopt = 0
 "let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_confirm_extra_conf = 0
+"let g:ycm_complete_in_comments = 1
 "nnoremap <C-g> :YcmCompleter GoTo
 
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
