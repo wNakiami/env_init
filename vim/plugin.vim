@@ -33,6 +33,7 @@ noremap <leader>tt :NERDTreeClose<cr>
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'easymotion/vim-easymotion'
+map <leader>s <Plug>(easymotion-s)
 
 Plug 'Raimondi/delimitMate'
 
