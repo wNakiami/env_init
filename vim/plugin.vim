@@ -40,25 +40,27 @@ Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
 nnoremap <leader>tb :TagbarToggle<cr>
 
-"Plug 'Yggdroot/LeaderF'
-"nnoremap <leader>f :LeaderfFunction<cr>
-"nnoremap <leader>u :LeaderfFunctionCword<cr>
-"let g:Lf_PreviewResult = {
-            "\ 'File' : 0,
-            "\ 'Buffer' : 0,
-            "\ 'Mru' : 0,
-            "\ 'Tag' : 0,
-            "\ 'BufTag' : 1,
-            "\ 'Function' : 0,
-            "\ 'Line' : 0,
-            "\ 'Colorscheme' : 0
-            "\ }
+if version > 743
+    Plug 'Yggdroot/LeaderF'
+    nnoremap <leader>f :LeaderfFunction<cr>
+    nnoremap <leader>u :LeaderfFunctionCword<cr>
+    let g:Lf_PreviewResult = {
+                \ 'File' : 0,
+                \ 'Buffer' : 0,
+                \ 'Mru' : 0,
+                \ 'Tag' : 0,
+                \ 'BufTag' : 1,
+                \ 'Function' : 0,
+                \ 'Line' : 0,
+                \ 'Colorscheme' : 0
+                \ }
+endif
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :FZF<cr>
-nnoremap <leader>f :BTags<cr>
-nnoremap <leader>u :BTags <c-r><c-w><cr>
+"nnoremap <leader>f :BTags<cr>
+"nnoremap <leader>u :BTags <c-r><c-w><cr>
 
 "Plug 'Valloric/YouCompleteMe'
 "let g:ycm_server_python_interpreter = '/usr/bin/python'
