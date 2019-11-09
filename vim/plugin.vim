@@ -65,8 +65,8 @@ nnoremap <C-p> :FZF<cr>
 "Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
 Plug 'dyng/ctrlsf.vim'
-nnoremap <leader>sf :CtrlSF <c-r><c-w><cr>
-nnoremap <leader>st :CtrlSFToggle<cr>
+nnoremap <leader>cf :CtrlSF <c-r><c-w><cr>
+nnoremap <leader>ct :CtrlSFToggle<cr>
 
 " these two plugin use for copy text form vim into tmux's clipboard
 Plug 'tmux-plugins/vim-tmux-focus-events'
