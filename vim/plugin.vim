@@ -41,17 +41,17 @@ Plug 'majutsushi/tagbar'
 nnoremap <leader>tb :TagbarToggle<cr>
 
 if version > 743
-    Plug 'Yggdroot/LeaderF'
-    nnoremap <leader>f :LeaderfFunction<cr>
-    nnoremap <leader>u :LeaderfFunctionCword<cr>
-    let g:Lf_PreviewResult = { 'Function' : 0 }
+    "Plug 'Yggdroot/LeaderF'
+    "nnoremap <leader>f :LeaderfFunction<cr>
+    "nnoremap <leader>u :LeaderfFunctionCword<cr>
+    "let g:Lf_PreviewResult = { 'Function' : 0 }
 endif
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :FZF<cr>
-"nnoremap <leader>f :BTags<cr>
-"nnoremap <leader>u :BTags <c-r><c-w><cr>
+nnoremap <leader>f :BTags<cr>
+nnoremap <leader>u :BTags <c-r><c-w><cr>
 
 "Plug 'Valloric/YouCompleteMe'
 "let g:ycm_server_python_interpreter = '/usr/bin/python'
