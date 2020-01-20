@@ -8,6 +8,6 @@ if [[ -n (command -v git) ]]; then
 
     git config --global icdiff.options '--line-numbers'
 
-    git config --global user.name 'Nakiami'
+    git config --global user.name 'wNakiami'
     git config --global user.email 'wjl8927962@vip.qq.com'
 fi
