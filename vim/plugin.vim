@@ -88,11 +88,13 @@ if version >= 800
     Plug 'w0rp/ale'
     let g:ale_lint_on_text_changed = 'normal'
     let g:ale_lint_on_insert_leave = 1
-    let g:ale_fixers = {
-    \   'lua': ['luacheck'],
-    \   'python': ['flake8'],
-    \}
-    let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
+    "let g:ale_fixers = {
+    "\   'lua': ['luacheck'],
+    "\   'python': ['flake8'],
+    "\}
+    "let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 endif
 
 call plug#end()
