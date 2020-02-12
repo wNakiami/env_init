@@ -86,8 +86,8 @@ if version >= 800
     endif
 
     Plug 'w0rp/ale'
-    let g:ale_lint_on_text_changed = 'normal'
-    let g:ale_lint_on_insert_leave = 1
+    "let g:ale_lint_on_text_changed = 'normal'
+    "let g:ale_lint_on_insert_leave = 1
     "let g:ale_fixers = {
     "\   'lua': ['luacheck'],
     "\   'python': ['flake8'],
