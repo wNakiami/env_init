@@ -67,6 +67,7 @@ nnoremap <leader>u :BTags <c-r><c-w><cr>
 Plug 'dyng/ctrlsf.vim'
 nnoremap <leader>cf :CtrlSF <c-r><c-w><cr>
 nnoremap <leader>ct :CtrlSFToggle<cr>
+let g:ctrlsf_position = 'bottom'
 
 " these two plugin use for copy text form vim into tmux's clipboard
 Plug 'tmux-plugins/vim-tmux-focus-events'
