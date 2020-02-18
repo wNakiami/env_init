@@ -1,0 +1,85 @@
+{
+    "inbounds": [{
+        "port": 1080,
+        "protocol": "socks",
+        "listen": "127.0.0.1",
+        "settings": {
+            "auth": "noauth",
+            "udp": true,
+            "ip": "127.0.0.1",
+            "userLevel": 0
+        },
+        "sniffing": {
+            "enabled": true,
+            "destOverride": ["http", "tls"]
+        }
+    },{
+    "port": 5001,
+    "listen": "127.0.0.1",
+    "protocol": "http",
+    "settings": {
+        "allowTransparent": false
+    },
+    "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"]
+    }
+    }],
+    "outbounds": [{
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [{
+                "address": "nakiamifortls.ltd",
+                "port": 443,
+                "users": [{
+                    "id": "d6331847-5bab-4490-9f3a-a0a35fab09b6",
+                    "alterId": 64,
+                    "security": "auto"
+                }]
+            }]
+        },
+        "streamSettings": {
+            "network": "ws",
+            "security": "tls",
+            "tlsSettings": {
+                "allowInsecure": true
+            },
+            "wsSettings": {
+                "connectionReuse": true,
+                "path": "/root/web/url/nakiami/for/websocket/with/tls",
+                "header": null
+            }
+        }
+    },{
+    "protocol": "blackhole",
+    "settings": {},
+    "tag": "blocked"
+    },{
+    "tag": "direct",
+    "protocol": "freedom",
+    "settings": {
+        "vnext": null,
+        "servers": null,
+        "response": null
+    },
+    "streamSettings": null,
+    "mux": null
+    }],
+    "routing": {
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "type": "field",
+                "outboundTag": "direct",
+                "ip": [
+                    "geoip:private"
+                ]
+            }
+        ]
+    },
+    "log": {
+        "access": "/root/.log/v2ray/access.log",
+        "error": "/root/.log/v2ray/error.log",
+        "loglevel": "warning"
+    }
+}
