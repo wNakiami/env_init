@@ -86,7 +86,7 @@ if version >= 800
         silent! call mkdir(s:vim_tags, 'p')
     endif
 
-    Plug 'w0rp/ale'
+    "Plug 'w0rp/ale'
     "let g:ale_lint_on_text_changed = 'normal'
     "let g:ale_lint_on_insert_leave = 1
     "let g:ale_fixers = {
@@ -96,6 +96,10 @@ if version >= 800
     "let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    nmap <leader>def <Plug>(coc-definition)
+    nmap <leader>dec <Plug>(coc-declaration)
+    nmap <leader>imp <Plug>(coc-implementation)
+    nmap <leader>ref <Plug>(coc-references)
 endif
 
 call plug#end()
