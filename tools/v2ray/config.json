@@ -48,7 +48,13 @@
                 "connectionReuse": true,
                 "path": "/root/web/url/nakiami/for/websocket/with/tls",
                 "header": null
+            },
+            "sockopt": {
+                "tcpFastOpen": true
             }
+        },
+        "mux": {
+            "enabled": true
         }
     },{
     "protocol": "blackhole",
