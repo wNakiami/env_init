@@ -13,3 +13,8 @@ if [[ -n $(command -v git) ]]; then
     git config --global user.name 'wNakiami'
     git config --global user.email 'wjl8927962@vip.qq.com'
 fi
+
+if [[ -n $(command -v v2ray) ]]; then
+    git config --global http.http://github.com.proxy socks5://127.0.0.1:1080
+    git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+fi
