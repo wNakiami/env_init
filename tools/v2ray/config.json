@@ -53,7 +53,7 @@
             "settings": {
                 "vnext": [
                     {
-                        "address": "nakiamifortls.ltd",
+                        "address": "",
                         "port": 443,
                         "users": [
                             {
