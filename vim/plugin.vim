@@ -102,7 +102,7 @@ if version >= 800
     "\}
     "let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions = ['coc-json']
+    let g:coc_global_extensions = ['coc-json', 'coc-snippets']
     autocmd FileType json syntax match Comment +\/\/.\+$+
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
