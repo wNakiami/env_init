@@ -15,6 +15,6 @@ if [[ -n $(command -v git) ]]; then
 fi
 
 if [[ -n $(command -v v2ray) ]]; then
-    git config --global http.http://github.com.proxy socks5://127.0.0.1:1080
-    git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+    git config --global http.http://github.com.proxy http://127.0.0.1:5001
+    git config --global http.https://github.com.proxy http://127.0.0.1:5001
 fi
