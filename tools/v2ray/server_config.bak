@@ -1,0 +1,65 @@
+{
+  "policy": null,
+  "log": {
+    "access": "/root/log/v2ray/access.log",
+    "error": "/root/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port": 443,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "d6331847-5bab-4490-9f3a-a0a35fab09b6",
+            "alterId": 64
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": true,
+          "certificates": [
+            {
+              "certificateFile": "/root/3106452_nakiamifortls.ltd.pem",
+              "keyFile": "/root/3106452_nakiamifortls.ltd.key"
+            }
+          ]
+        },
+        "wsSettings": {
+          "connectionReuse": true,
+          "path": "/root/web/url/nakiami/for/websocket/with/tls",
+          "headers": null
+        },
+        "httpSettings": null,
+        "quicSettings": null,
+        "sockopt": {
+            "tcpFastOpen": true
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {}
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {},
+      "tag": "blocked"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "ip": ["geoip:private"],
+        "outboundTag": "blocked"
+      }
+    ]
+  }
+}
