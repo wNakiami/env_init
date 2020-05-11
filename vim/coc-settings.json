@@ -1,0 +1,33 @@
+{
+    // base options
+    "suggest.enablePreview": false,
+    "suggest.minTriggerInputLength": 2,
+    //"diagnostic.displayByAle": true,
+    "coc.preferences.extensionUpdateCheck": "weekly",
+    "diagnostic.messageDelay": 300,
+    "diagnostic.checkCurrentLine": true,
+
+    // clangd
+    "clangd.semanticHighlighting": true,
+
+    // coc.snippets
+    "snippets.ultisnips.directories": [
+        "UltiSnips"
+    ],
+
+    // LS
+    "languageserver": {
+        //"lua": {
+        //    "command": "java",
+        //    "args": ["-cp", "/home/nakiami/github/EmmyLua-LanguageServer/EmmyLua-LS-all.jar", "com.tang.vscode.MainKt"],
+        //    "filetypes": ["lua"],
+        //    "rootPatterns": [".git/"]
+        //}
+        "lua": {
+            "command": "/home/nakiami/.lsp/lua-language-server/bin/Linux/lua-language-server",
+            "args": ["-E", "-e", "LANG=\"zh-cn\"", "/home/nakiami/.lsp/lua-language-server/main.lua"],
+            "filetypes": ["lua"],
+            "rootPatterns": [".git/"]
+        }
+    }
+}
