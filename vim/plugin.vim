@@ -35,23 +35,26 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'easymotion/vim-easymotion'
 map <leader>s <Plug>(easymotion-s)
 
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'majutsushi/tagbar'
 nnoremap <leader>tb :TagbarToggle<cr>
 
 if version > 743
-    "Plug 'Yggdroot/LeaderF'
-    "nnoremap <leader>f :LeaderfFunction<cr>
-    "nnoremap <leader>u :LeaderfFunctionCword<cr>
-    "let g:Lf_PreviewResult = { 'Function' : 0 }
+    Plug 'Yggdroot/LeaderF'
+    nnoremap <C-p> :Leaderf file<cr>
+    nnoremap <leader>f :LeaderfFunction<cr>
+    nnoremap <leader>u :LeaderfFunctionCword<cr>
+    let g:Lf_PreviewResult = { 'Function' : 0 }
+    let g:Lf_UseVersionControlTool = 0
 endif
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-nnoremap <C-p> :FZF<cr>
-nnoremap <leader>f :BTags<cr>
-nnoremap <leader>u :BTags <c-r><c-w><cr>
+"Plug 'junegunn/fzf.vim'
+"nnoremap <C-p> :FZF<cr>
+"nnoremap <leader>f :BTags<cr>
+"nnoremap <leader>u :BTags <c-r><c-w><cr>
 
 "Plug 'Valloric/YouCompleteMe'
 "let g:ycm_server_python_interpreter = '/usr/bin/python'
@@ -76,6 +79,9 @@ Plug 'roxma/vim-tmux-clipboard'
 " syntax highlighting for skynet sproto 
 Plug 'spin6lock/vim_sproto'
 
+"Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"Plug 'justinmk/vim-sneak'
+
 if version >= 800
     Plug 'ludovicchabant/vim-gutentags'
     let g:gutentags_project_root = ['.git', '.svn', '.hg']
@@ -93,7 +99,7 @@ if version >= 800
         silent! call mkdir(s:vim_tags, 'p')
     endif
 
-    Plug 'w0rp/ale'
+    "Plug 'w0rp/ale'
     "let g:ale_lint_on_text_changed = 'normal'
     "let g:ale_lint_on_insert_leave = 1
     "let g:ale_fixers = {
@@ -105,6 +111,7 @@ if version >= 800
     Plug 'jackguo380/vim-lsp-cxx-highlight'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     let g:coc_global_extensions = ['coc-json', 'coc-snippets']
+    let g:coc_config_home = '~/.local/etc/coc'
     autocmd FileType json syntax match Comment +\/\/.\+$+
     inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
     inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
