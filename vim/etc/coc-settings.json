@@ -4,7 +4,7 @@
     "suggest.minTriggerInputLength": 2,
     //"diagnostic.displayByAle": true,
     "coc.preferences.extensionUpdateCheck": "weekly",
-    "diagnostic.messageDelay": 100,
+    "diagnostic.messageDelay": 0,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.messageTarget": "echo",
 
@@ -16,7 +16,8 @@
     "clangd.semanticHighlighting": true,
 
     // coc.snippets
-    "snippets.ultisnips.directories": ["UltiSnips"],
+    "snippets.userSnippetsDirectory": "~/.vim/etc",
+    "snippets.ultisnips.directories": ["~/.vim/etc"],
 
     // LS
     "languageserver": {
