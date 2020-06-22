@@ -83,21 +83,21 @@ Plug 'spin6lock/vim_sproto'
 "Plug 'justinmk/vim-sneak'
 
 if version >= 800
-    Plug 'ludovicchabant/vim-gutentags'
-    let g:gutentags_project_root = ['.git', '.svn', '.hg']
-    let g:gutentags_ctags_tagfile = '.tags'
-    let g:gutentags_modules = []
-    if executable('ctags')
-        let g:gutentags_modules += ['ctags']
-    endif
-    if executable('gtags-cscope') && executable('gtags')
-        let g:gutentags_modules += ['gtags_cscope']
-    endif
-    let s:vim_tags = expand('~/.local/tags_cache/tags')
-    let g:gutentags_cache_dir = s:vim_tags
-    if !isdirectory(s:vim_tags)
-        silent! call mkdir(s:vim_tags, 'p')
-    endif
+    "Plug 'ludovicchabant/vim-gutentags'
+    "let g:gutentags_project_root = ['.git', '.svn', '.hg']
+    "let g:gutentags_ctags_tagfile = '.tags'
+    "let g:gutentags_modules = []
+    "if executable('ctags')
+        "let g:gutentags_modules += ['ctags']
+    "endif
+    "if executable('gtags-cscope') && executable('gtags')
+        "let g:gutentags_modules += ['gtags_cscope']
+    "endif
+    "let s:vim_tags = expand('~/.local/tags_cache/tags')
+    "let g:gutentags_cache_dir = s:vim_tags
+    "if !isdirectory(s:vim_tags)
+        "silent! call mkdir(s:vim_tags, 'p')
+    "endif
 
     "Plug 'w0rp/ale'
     "let g:ale_lint_on_text_changed = 'normal'
@@ -108,17 +108,17 @@ if version >= 800
     "\}
     "let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
 
-    Plug 'jackguo380/vim-lsp-cxx-highlight'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions = ['coc-json', 'coc-snippets']
-    let g:coc_config_home = '~/.vim/etc'
-    autocmd FileType json syntax match Comment +\/\/.\+$+
-    inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-    inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    nmap <leader>df <Plug>(coc-definition)
-    nmap <leader>dc <Plug>(coc-declaration)
-    nmap <leader>im <Plug>(coc-implementation)
-    nmap <leader>re <Plug>(coc-references)
+    "Plug 'jackguo380/vim-lsp-cxx-highlight'
+    "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    "let g:coc_global_extensions = ['coc-json', 'coc-snippets']
+    "let g:coc_config_home = '~/.vim/etc'
+    "autocmd FileType json syntax match Comment +\/\/.\+$+
+    "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+    "inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+    "nmap <leader>df <Plug>(coc-definition)
+    "nmap <leader>dc <Plug>(coc-declaration)
+    "nmap <leader>im <Plug>(coc-implementation)
+    "nmap <leader>re <Plug>(coc-references)
 endif
 
 call plug#end()
