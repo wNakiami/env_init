@@ -8,7 +8,7 @@ if [[ -n $(command -v git) ]]; then
 
     git config --global icdiff.options '--line-numbers'
 
-    git config --global pull.rebase true
+    #git config --global pull.rebase true
 
     git config --global credential.helper store
 
