@@ -1,16 +1,17 @@
 {
     // base options
+    "json.format.enable": true,
     "suggest.enablePreview": false,
     "suggest.minTriggerInputLength": 2,
-    //"diagnostic.displayByAle": true,
+    "diagnostic.displayByAle": true,
     "coc.preferences.extensionUpdateCheck": "weekly",
     "diagnostic.messageDelay": 0,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.messageTarget": "echo",
 
     // python
-    "python.jediEnabled": false,
-    "python.linting.flake8Args": ["--ignore=E221,E302,E305,E201,E501,E128,E231"],
+    // "python.jediEnabled": false,
+    // "python.linting.flake8Args": ["--ignore=E221,E302,E305,E201,E501,E128,E231"],
 
     // clangd
     "clangd.semanticHighlighting": true,
@@ -24,10 +25,11 @@
         "lua": {
             "cwd": "/home/nakiami/.lsp/lua-language-server",
             "command": "/home/nakiami/.lsp/lua-language-server/bin/Linux/lua-language-server",
-            "args": ["-E", "-e", "LANG=zh-cn", "/home/nakiami/.lsp/lua-language-server/main.lua"],
+            "args": ["-E", "/home/nakiami/.lsp/lua-language-server/main.lua"],
             "filetypes": ["lua"],
             "rootPatterns": [".git/"]
         }
     },
-    "Lua.diagnostics.disable": ["lowercase-global"]
+
+    "Lua.diagnostics.disable": ["unused-function"]
 }
