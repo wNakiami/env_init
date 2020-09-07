@@ -102,15 +102,10 @@ if version >= 800
     "Plug 'w0rp/ale'
     "let g:ale_lint_on_text_changed = 'normal'
     "let g:ale_lint_on_insert_leave = 1
-    "let g:ale_fixers = {
-    "\   'lua': ['luacheck'],
-    "\   'python': ['flake8'],
-    "\}
-    "let g:ale_python_flake8_options = '--ignore=E221,E302,E305,E201,E501,E128,E231'
 
     "Plug 'jackguo380/vim-lsp-cxx-highlight'
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    "let g:coc_global_extensions = ['coc-json', 'coc-snippets']
+    "let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-explorer']
     "let g:coc_config_home = '~/.vim/etc'
     "autocmd FileType json syntax match Comment +\/\/.\+$+
     "inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -119,6 +114,7 @@ if version >= 800
     "nmap <leader>dc <Plug>(coc-declaration)
     "nmap <leader>im <Plug>(coc-implementation)
     "nmap <leader>re <Plug>(coc-references)
+    "nmap <leader>e :CocCommand explorer<CR>
 endif
 
 call plug#end()

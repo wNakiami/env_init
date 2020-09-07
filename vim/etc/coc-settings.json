@@ -20,6 +20,10 @@
     "snippets.userSnippetsDirectory": "~/.vim/etc",
     "snippets.ultisnips.directories": ["~/.vim/etc"],
 
+    // coc-explore
+    "explorer.position": "right",
+    "explorer.previewAction.onHover": false,
+
     // LS
     "languageserver": {
         "lua": {
