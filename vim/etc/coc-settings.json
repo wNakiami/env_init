@@ -12,6 +12,7 @@
     // python
     // "python.jediEnabled": false,
     // "python.linting.flake8Args": ["--ignore=E221,E302,E305,E201,E501,E128,E231"],
+    "python.analysis.logLevel": "Error",
 
     // clangd
     "clangd.semanticHighlighting": true,
@@ -29,11 +30,17 @@
         "lua": {
             "cwd": "/home/nakiami/.lsp/lua-language-server",
             "command": "/home/nakiami/.lsp/lua-language-server/bin/Linux/lua-language-server",
-            "args": ["-E", "/home/nakiami/.lsp/lua-language-server/main.lua"],
+            "args": ["-E", "-e", "LANG=en", "/home/nakiami/.lsp/lua-language-server/main.lua"],
             "filetypes": ["lua"],
-            "rootPatterns": [".git/"]
+            "trace.server": "verbose",
+            "rootPatterns": [".git/"],
+            "settings": {
+                "Lua": {
+                    "diagnostics": {
+                        "disable": ["unused-function", "empty-block"]
+                    }
+                }
+            }
         }
-    },
-
-    "Lua.diagnostics.disable": ["unused-function"]
+    }
 }
