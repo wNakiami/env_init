@@ -10,8 +10,8 @@ then
 fi
 
 cd $ENV
-sh update.sh
-sh git.sh
+bash update.sh
+bash git.sh
 
 INIT=$HOME/.local/etc/init.sh
 
