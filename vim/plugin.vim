@@ -77,7 +77,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'roxma/vim-tmux-clipboard'
 
 " syntax highlighting for skynet sproto 
-Plug 'spin6lock/vim_sproto'
+"Plug 'spin6lock/vim_sproto'
 
 "Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'justinmk/vim-sneak'

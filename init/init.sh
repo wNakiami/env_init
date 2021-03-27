@@ -7,7 +7,7 @@ else
     return
 fi
 
-VIM=`command -v vim`
+VIM=$(command -v vim)
 if [ -n "$VIM" ]; then
     export EDITOR="$VIM"
 fi
