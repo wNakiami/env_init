@@ -18,13 +18,13 @@ INIT=$HOME/.local/etc/init.sh
 if [ -f "$HOME/.bashrc" ]
 then
     echo "source $INIT" >> $HOME/.bashrc
-    echo "umask 022" >> $HOME/.bashrc
+    echo "umask 023" >> $HOME/.bashrc
 fi
 
 if [ -f "$HOME/.zshrc" ]
 then
     echo "source $INIT" >> $HOME/.zshrc
-    echo "umask 022" >> $HOME/.zshrc
+    echo "umask 023" >> $HOME/.zshrc
 fi
 
 echo "source $HOME/.vim/init.vim" >> $HOME/.vimrc
