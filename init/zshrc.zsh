@@ -9,22 +9,23 @@ export HOSTNAME=$HOST
 
 source ~/workspace/github/zinit/zinit.zsh
 
-zinit snippet OMZ::lib/history.zsh
-zinit snippet OMZ::lib/git.zsh
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
-zinit ice lucid wait='0'
-zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::theme-and-appearance.zsh
+zinit snippet OMZL::history.zsh
+zinit snippet OMZL::git.zsh
+zinit snippet OMZL::clipboard.zsh
 
-zinit ice lucid wait='0'
+zinit snippet OMZP::git
+zinit snippet OMZP::timer
+zinit snippet OMZP::command-not-found
+zinit snippet OMZP::colored-man-pages
+
 zinit light skywind3000/z.lua
 export _ZL_ADD_ONCE=1
 export _ZL_MATCH_MODE=1
 
-zinit ice lucid wait='0'
 zinit light zdharma/fast-syntax-highlighting
-
-zinit ice lucid wait='0' atload='_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
-
-zinit ice depth=1
-zinit light romkatv/powerlevel10k
