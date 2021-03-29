@@ -55,6 +55,7 @@ Plug 'junegunn/fzf.vim'
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader>f :BTags<cr>
 nnoremap <leader>u :BTags <c-r><c-w><cr>
+let g:fzf_layout = {'down': '40%'}
 
 "Plug 'Valloric/YouCompleteMe'
 "let g:ycm_server_python_interpreter = '/usr/bin/python'
