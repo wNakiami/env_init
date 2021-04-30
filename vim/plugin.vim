@@ -31,6 +31,8 @@ noremap <leader>t :NERDTree<cr>
 noremap <leader>tt :NERDTreeClose<cr>
 
 Plug 'scrooloose/nerdcommenter'
+let NERDToggleCheckAllLines = 1
+let NERDDefaultAlign = 'left'
 
 Plug 'easymotion/vim-easymotion'
 map <leader>s <Plug>(easymotion-s)
@@ -80,6 +82,8 @@ Plug 'roxma/vim-tmux-clipboard'
 " syntax highlighting for skynet sproto 
 "Plug 'spin6lock/vim_sproto'
 
+"Plug 'rust-lang/rust.vim'
+
 "Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 "Plug 'justinmk/vim-sneak'
 
@@ -115,7 +119,14 @@ if version >= 800
     "nmap <leader>dc <Plug>(coc-declaration)
     "nmap <leader>im <Plug>(coc-implementation)
     "nmap <leader>re <Plug>(coc-references)
+    "nmap <leader>rf <Plug>(coc-refactor)
     "nmap <leader>e :CocCommand explorer<CR>
+    " gopls for go language server
+    "autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+
+    Plug 'skywind3000/asynctasks.vim'
+    Plug 'skywind3000/asyncrun.vim'
+    let g:asyncrun_open = 6
 endif
 
 call plug#end()
