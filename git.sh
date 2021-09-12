@@ -10,8 +10,10 @@ if [[ -n $(command -v git) ]]; then
 
     #git config --global pull.rebase true
 
-    git config --global credential.helper store
+    #git config --global credential.helper store
+    #git config --global diff.algorithm histogram
 
+    # account of Github
     git config --global user.name 'wNakiami'
     git config --global user.email 'wjl8927962@vip.qq.com'
 fi
