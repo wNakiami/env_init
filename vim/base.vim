@@ -8,6 +8,13 @@ let g:mapleader = ","
 
 nmap <leader>w :w!<cr>
 
+" 根据是否启动了tmux来设置ttimeoutlen,表示esc键延迟多久触发
+if $TMUX != ''
+    set ttimeoutlen=20
+elseif &ttimeoutlen > 60 || &ttimeoutlen <= 0
+    set ttimeoutlen=60
+endif
+
 set mouse=a
 
 set updatetime=200
@@ -17,9 +24,11 @@ set number
 set so=7
 
 set background=dark
-set t_Co=256
-syntax on
-colorscheme monokai
+"set t_Co=256
+syntax enable
+if has("termguicolors")
+    set termguicolors
+endif
 
 set encoding=utf-8
 
@@ -69,6 +78,12 @@ set shiftwidth=4
 set tabstop=4
 set autoindent
 
+" backspace兼容配置
+set backspace=indent,eol,start
+
+autocmd FileType go setlocal noexpandtab sta sw=4 sts=4
+autocmd FileType proto setlocal noexpandtab sta sw=4 sts=4
+
 map <silent> <leader><cr> :noh<cr>
 
 map <C-j> <C-W>j
@@ -80,6 +95,14 @@ map <leader>bd :bd<cr>
 
 map <C-n> :bprevious<cr>
 map <C-m> :bnext<cr>
+
+""""""""""""""""""""""""""""""""
+" insert模式
+
+inoremap <c-d> <esc>ddi
+
+" insert模式end
+""""""""""""""""""""""""""""""""
 
 " 显示状态栏
 set laststatus=2
