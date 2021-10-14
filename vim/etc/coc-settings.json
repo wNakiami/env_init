@@ -8,22 +8,31 @@
     "diagnostic.messageDelay": 0,
     "diagnostic.checkCurrentLine": true,
     "diagnostic.messageTarget": "echo",
+    "highlight.colors.enable": true,
+    "hover.target": "float",
 
     // python
     // "python.jediEnabled": false,
     // "python.linting.flake8Args": ["--ignore=E221,E302,E305,E201,E501,E128,E231"],
-    "python.analysis.logLevel": "Error",
+    //"python.analysis.logLevel": "Error",
 
     // clangd
     "clangd.semanticHighlighting": true,
+    "go.goplsOptions": {
+        "semanticTokens": true
+    },
+    "coc.preferences.enableMessageDialog": true,
+    "coc.preferences.floatActions": true,
+    "signature.target": "float",
+    "suggest.floatEnable": true,
 
     // coc.snippets
     "snippets.userSnippetsDirectory": "~/.vim/etc",
     "snippets.ultisnips.directories": ["~/.vim/etc"],
 
     // coc-explore
-    "explorer.position": "right",
-    "explorer.previewAction.onHover": false,
+    //"explorer.position": "right",
+    //"explorer.previewAction.onHover": false,
 
     // LS
     "languageserver": {
@@ -42,5 +51,19 @@
                 }
             }
         }
+        //"golang": {
+        //    "command": "gopls",
+        //    "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+        //    "filetypes": ["go"],
+        //    "initializationOptions": {
+        //        "usePlaceholders": true,
+        //        "semanticTokens": true
+        //    }
+        //}
+        //"rust": {
+        //    "command": "rust-analyzer",
+        //    "filetypes": ["rust"],
+        //    "rootPatterns": ["Cargo.toml"]
+        //}
     }
 }
