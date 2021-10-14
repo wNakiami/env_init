@@ -14,8 +14,12 @@ if [[ -n $(command -v git) ]]; then
     #git config --global diff.algorithm histogram
 
     # account of Github
-    git config --global user.name 'wNakiami'
-    git config --global user.email 'wjl8927962@vip.qq.com'
+    #git config --global user.name 'wNakiami'
+    #git config --global user.email 'wjl8927962@vip.qq.com'
+
+    # account of Starunion
+    git config --global user.name 'axia'
+    git config --global user.email 'axia@staruniongame.com'
 fi
 
 if [[ -n $(command -v v2ray) ]]; then
